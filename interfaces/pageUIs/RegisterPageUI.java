@@ -15,6 +15,5 @@ public class RegisterPageUI {
 	public static final String CONFIRM_PASSWORD_TEXT_BOX = "//input[@id='ConfirmPassword']";
 	public static final String REGISTER_DUPLICATED_ERROR_MESSAGE = "//div[contains(@class,'message-error')]//li";
 	public static final String REGISTER_COMPLETE_MESSAGE = "//div[@class='result']";
-	public static final String LOG_OUT_LINK = "//a[@class='ico-logout']";
-	
+	public static final String LOG_OUT_LINK = "//a[@class='ico-logout']";	
 }

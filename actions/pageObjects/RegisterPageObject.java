@@ -3,14 +3,12 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
-import pageUIs.HomePageUI;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage{
 	private WebDriver driver;
 
 	public RegisterPageObject(WebDriver driver) {
-		super();
 		this.driver = driver;
 	}
 
@@ -19,59 +17,54 @@ public class RegisterPageObject extends BasePage{
 		clickToElement(driver, RegisterPageUI.REGISTER_LINK);		
 	}
 	
-	public String getFirstNameErrorMessage() {
+	public String getErrorMessageAtFirstNameTextbox() {
 		waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
 	}
 	
-	public String getLastNameErrorMessage() {
+	public String getErrorMesssageAtLastNameTextbox() {
 		waitForElementVisible(driver, RegisterPageUI.LAST_NAME_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.LAST_NAME_ERROR_MESSAGE);
 	}
 	
-	public String getEmailErrorMessage() {
+	public String getErrorMessageAtEmailTextbox() {
 		waitForElementVisible(driver, RegisterPageUI.EMAIL_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.EMAIL_ERROR_MESSAGE);
 	}
 	
-	public String getPasswordErrorMessage() {
+	public String getErrorMessageAtPasswordTextbox() {
 		waitForElementVisible(driver, RegisterPageUI.PASSWORD_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.PASSWORD_ERROR_MESSAGE);
 	}
 
-	public String getConfirmPasswordErrorMessage() {
+	public String getErrorMessageAtConfirmPasswordTextbox() {
 		waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
 	}
 
-	public void inputFirstNameTextbox(String firstName) {
+	public void inputToFirstNameTextbox(String firstName) {
 		waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_TEXT_BOX);
 		sendKeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXT_BOX, firstName);
-		
 	}
 
-	public void inputLastNameTextbox(String lastName) {
+	public void inputToLastNameTextbox(String lastName) {
 		waitForElementVisible(driver, RegisterPageUI.LAST_NAME_TEXT_BOX);
-		sendKeyToElement(driver, RegisterPageUI.LAST_NAME_TEXT_BOX, lastName);
-		
+		sendKeyToElement(driver, RegisterPageUI.LAST_NAME_TEXT_BOX, lastName);		
 	}
 
-	public void inputEmailTextbox(String email) {
+	public void inputToEmailTextbox(String email) {
 		waitForElementVisible(driver, RegisterPageUI.EMAIL_TEXT_BOX);
 		sendKeyToElement(driver, RegisterPageUI.EMAIL_TEXT_BOX, email);
-		
 	}
 
-	public void inputPasswordTextbox(String password) {
+	public void inputToPasswordTextbox(String password) {
 		waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXT_BOX);
 		sendKeyToElement(driver, RegisterPageUI.PASSWORD_TEXT_BOX, password);
-		
 	}
 
-	public void inputConfirmPasswordTextbox(String confirmPassword) {
+	public void inputToConfirmPasswordTextbox(String confirmPassword) {
 		waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXT_BOX);
 		sendKeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXT_BOX, confirmPassword);
-		
 	}
 	
 	public String getRegisterCompleteMessage() {
@@ -88,5 +81,4 @@ public class RegisterPageObject extends BasePage{
 		waitForElementVisible(driver, RegisterPageUI.REGISTER_DUPLICATED_ERROR_MESSAGE);
 		return getElementText(driver, RegisterPageUI.REGISTER_DUPLICATED_ERROR_MESSAGE);
 	}
-
 }

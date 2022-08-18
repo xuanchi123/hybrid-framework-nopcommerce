@@ -10,7 +10,6 @@ public class HomePageObject extends BasePage{
 	private WebDriver driver;
 
 	public HomePageObject(WebDriver driver) {
-		super();
 		this.driver = driver;
 	}
 
@@ -19,6 +18,13 @@ public class HomePageObject extends BasePage{
 		clickToElement(driver, HomePageUI.REGISTER_LINK);
 	}
 
+	public void clickToLoginLink() {
+		waitForElementClickable(driver, HomePageUI.LOGIN_LINK);
+		clickToElement(driver, HomePageUI.LOGIN_LINK);
+	}
 
-
+	public boolean isHomePageDisplays() {
+		waitForElementVisible(driver, HomePageUI.MY_ACCOUNT_LINK);
+		return isElementDisplay(driver, HomePageUI.MY_ACCOUNT_LINK);
+	}
 }
