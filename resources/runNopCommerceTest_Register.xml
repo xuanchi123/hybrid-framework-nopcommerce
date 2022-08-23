@@ -3,13 +3,7 @@
   <test name="Run on Firefox">
 	<parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level5_Page_Factory_Register"/>
-    </classes>
-  </test> 
-  <test name="Run on Chrome">
-	<parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.nopcommerce.user.Level5_Page_Factory_Login"/>
+      <class name="com.nopcommerce.user.Level6_Page_Generator_Manager_III"/>
     </classes>
   </test> 
 </suite> 

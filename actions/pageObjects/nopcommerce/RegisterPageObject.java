@@ -1,9 +1,9 @@
-package pageObjects;
+package pageObjects.nopcommerce;
 
 import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
-import pageUIs.RegisterPageUI;
+import pageUIs.nopcommerce.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage{
 	private WebDriver driver;
@@ -60,8 +60,9 @@ public class RegisterPageObject extends BasePage{
 		return getElementText(driver, RegisterPageUI.REGISTER_COMPLETE_MESSAGE);
 	}
 
-	public void clickToLogoutLink() {
-		clickToElement(driver, RegisterPageUI.LOG_OUT_LINK);		
+	public HomePageObject clickToLogoutLink() {
+		clickToElement(driver, RegisterPageUI.LOG_OUT_LINK);
+		return PageGeneratorManager.getHomePageObject(driver);
 	}
 
 	public String getRegisterDuplicatedErrorMessage() {

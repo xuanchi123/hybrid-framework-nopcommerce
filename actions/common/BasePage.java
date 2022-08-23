@@ -15,13 +15,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageUIs.HomePageUI;
+import pageObject.liveGuru.HomePageObject;
+import pageObject.liveGuru.LoginPageObject;
+import pageObject.liveGuru.PageGeneratorManager;
+import pageUIs.liveGuru.BasePageUI;
 
 public class BasePage {
 	private long longTimeout;
 	private JavascriptExecutor jsExecutor;
 	
-	public static BasePage getBasePage() {
+	public static BasePage getBasePageObject() {
 		return new BasePage();
 	}
 
@@ -353,5 +356,11 @@ public class BasePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public HomePageObject clickLogOut(WebDriver driver) {
+		clickToElement(driver, BasePageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, BasePageUI.LOG_OUT_LINK);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 }

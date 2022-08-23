@@ -1,12 +1,10 @@
 package common;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -14,7 +12,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	private WebDriver driver;
 	protected WebDriver getBrowserDriver(String browserName) {
-		String projectPath = System.getProperty("user.dir");
 		switch (browserName) {
 		case "firefox":
 			driver = WebDriverManager.firefoxdriver().create();
@@ -41,9 +38,14 @@ public class BaseTest {
 			throw new RuntimeException("Invalid driver");
 		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-		driver.get("https://demo.nopcommerce.com/");
+//		driver.get("https://demo.nopcommerce.com/");
+		driver.get("http://live.techpanda.org/");
 		driver.manage().window().fullscreen();	
 		return driver;
 	}
-	
+
+	public int getRandomNumber() {
+		Random random = new Random();
+		return random.nextInt(99999);		
+	}	
 }
