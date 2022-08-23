@@ -1,4 +1,4 @@
-package pageObject.liveGuru;
+package pageObjects.liveGuru;
 
 import org.openqa.selenium.WebDriver;
 

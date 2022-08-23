@@ -6,4 +6,6 @@ public class LoginPageUI {
 	public static final String LOGIN_BUTTON = "//button[contains(@class,'login-button')]";
 	public static final String EMAIL_ERROR_MESSAGE = "//span[@id='Email-error']";
 	public static final String UNSUCCESSFUL_MESSAGE = "//div[contains(@class,'validation-summary-errors')]";
+	public static final String MY_ACCOUNT_LINK = "//a[@class='ico-account']";
+	
 }

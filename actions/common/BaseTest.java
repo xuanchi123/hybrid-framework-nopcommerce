@@ -38,8 +38,8 @@ public class BaseTest {
 			throw new RuntimeException("Invalid driver");
 		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-//		driver.get("https://demo.nopcommerce.com/");
-		driver.get("http://live.techpanda.org/");
+		driver.get("https://demo.nopcommerce.com/");
+//		driver.get("http://live.techpanda.org/");
 		driver.manage().window().fullscreen();	
 		return driver;
 	}

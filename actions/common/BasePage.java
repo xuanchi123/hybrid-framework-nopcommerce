@@ -15,10 +15,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObject.liveGuru.HomePageObject;
-import pageObject.liveGuru.LoginPageObject;
-import pageObject.liveGuru.PageGeneratorManager;
-import pageUIs.liveGuru.BasePageUI;
+import pageObjects.nopcommerce.PageGeneratorManager;
+import pageObjects.nopcommerce.RewardPointsPageObject;
+import pageUIs.nopcommerce.BasePageUI;
+import pageObjects.liveGuru.HomePageObject;
+import pageObjects.nopcommerce.AddressesPageObject;
+import pageObjects.nopcommerce.CustomerInfoPageObject;
+import pageObjects.nopcommerce.MyProductReviewsPageObject;
+import pageObjects.nopcommerce.OrdersPageObject;
+
 
 public class BasePage {
 	private long longTimeout;
@@ -358,9 +363,38 @@ public class BasePage {
 		}
 	}
 	
-	public HomePageObject clickLogOut(WebDriver driver) {
-		clickToElement(driver, BasePageUI.MY_ACCOUNT_LINK);
-		clickToElement(driver, BasePageUI.LOG_OUT_LINK);
-		return PageGeneratorManager.getHomePage(driver);
+	public HomePageObject clickLogOutOfLiveGuru(WebDriver driver) {
+		clickToElement(driver, pageUIs.liveGuru.BasePageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, pageUIs.liveGuru.BasePageUI.LOG_OUT_LINK);
+		return pageObjects.liveGuru.PageGeneratorManager.getHomePage(driver);
+	}
+	
+	public CustomerInfoPageObject openCustomerInfoPage(WebDriver driver) {
+		clickToElement(driver, pageUIs.nopcommerce.BasePageUI.CUSTOMER_INFO_LINK);
+		return PageGeneratorManager.getCustomerInfoPage(driver);
+	}
+	
+	public AddressesPageObject openAddressesPage(WebDriver driver) {
+		clickToElement(driver, pageUIs.nopcommerce.BasePageUI.ADDRESSES_LINK);
+		return PageGeneratorManager.getAddressesPage(driver);
+	}
+	
+	public OrdersPageObject openOrdersPage(WebDriver driver) {
+		clickToElement(driver, pageUIs.nopcommerce.BasePageUI.ORDER_LINK);
+		return PageGeneratorManager.getOrderPage(driver);
+	}
+	
+	public RewardPointsPageObject openRewardPointsPage(WebDriver driver) {
+		clickToElement(driver, pageUIs.nopcommerce.BasePageUI.REWARD_POINTS_LINK);
+		return PageGeneratorManager.getRewardPointsPage(driver);
+	}
+	
+	public MyProductReviewsPageObject openMyProductReviewsPage(WebDriver driver) {
+		clickToElement(driver, pageUIs.nopcommerce.BasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		return PageGeneratorManager.getMyProductReviewsPage(driver);
+	}
+	
+	public String getPageHeaderTitle(WebDriver driver) {
+		return getElementText(driver, BasePageUI.PAGE_TITLE);
 	}
 }

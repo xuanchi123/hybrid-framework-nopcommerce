@@ -62,7 +62,7 @@ public class RegisterPageObject extends BasePage{
 
 	public HomePageObject clickToLogoutLink() {
 		clickToElement(driver, RegisterPageUI.LOG_OUT_LINK);
-		return PageGeneratorManager.getHomePageObject(driver);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 
 	public String getRegisterDuplicatedErrorMessage() {

@@ -14,7 +14,7 @@ public class LoginPageObject extends BasePage {
 
 	public HomePageObject clickToLogInButton() {
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return PageGeneratorManager.getHomePageObject(driver);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 
 	public String getErrorMessageAtEmailTextbox() {
