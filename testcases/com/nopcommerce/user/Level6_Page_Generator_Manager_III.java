@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 
 import common.BasePage;
 import common.BaseTest;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.PageGeneratorManager;
-import pageObjects.nopcommerce.RegisterPageObject;
+import common.PageGeneratorManager;
+import pageObjects.nopcommerce.user.UserHomePageObject;
+import pageObjects.nopcommerce.user.UserLoginPageObject;
+import pageObjects.nopcommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -21,10 +21,10 @@ public class Level6_Page_Generator_Manager_III extends BaseTest{
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	BasePage basePage;
-	HomePageObject homePage;
-	LoginPageObject loginPage;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
 	private String firstName, lastName, notExistEmail, invalidEmail, existEmail, invalidPassword, validPassword;
-	private RegisterPageObject registerPage;
+	private UserRegisterPageObject registerPage;
 
 	@Parameters("browser")
 	@BeforeClass

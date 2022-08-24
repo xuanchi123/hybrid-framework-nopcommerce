@@ -4,9 +4,9 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import common.BasePage;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.RegisterPageObject;
+import pageObjects.nopcommerce.user.UserHomePageObject;
+import pageObjects.nopcommerce.user.UserLoginPageObject;
+import pageObjects.nopcommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 
@@ -23,9 +23,9 @@ public class Level3_Page_Object_Register {
 	String projectPath = System.getProperty("user.dir");
 	String email;
 	BasePage basePage;
-	HomePageObject homePage;
-	LoginPageObject loginPage;
-	RegisterPageObject registerPage;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserRegisterPageObject registerPage;
 	private String firstName;
 	private String lastName;
 	private String password;
@@ -42,9 +42,9 @@ public class Level3_Page_Object_Register {
 		
 		driver.get("https://demo.nopcommerce.com/");
 		
-		homePage = new HomePageObject(driver);
-		loginPage = new LoginPageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		firstName = "Automation";
 		lastName = "FC";

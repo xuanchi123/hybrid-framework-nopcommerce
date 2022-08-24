@@ -1,6 +1,6 @@
-package pageUIs.nopcommerce;
+package pageUIs.nopcommerce.user;
 
-public class RegisterPageUI {
+public class UserRegisterPageUI {
 	public static final String REGISTER_LINK = "//button[@id='register-button']";
 	public static final String FIRST_NAME_ERROR_MESSAGE = "//span[@id='FirstName-error']";
 	public static final String LAST_NAME_ERROR_MESSAGE = "//span[@id='LastName-error']";

@@ -5,15 +5,15 @@ import org.testng.annotations.Test;
 
 import common.BasePage;
 import common.BaseTest;
-import pageObjects.nopcommerce.AddressesPageObject;
-import pageObjects.nopcommerce.CustomerInfoPageObject;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.MyProductReviewsPageObject;
-import pageObjects.nopcommerce.OrdersPageObject;
-import pageObjects.nopcommerce.PageGeneratorManager;
-import pageObjects.nopcommerce.RegisterPageObject;
-import pageObjects.nopcommerce.RewardPointsPageObject;
+import common.PageGeneratorManager;
+import pageObjects.nopcommerce.user.UserAddressesPageObject;
+import pageObjects.nopcommerce.user.UserCustomerInfoPageObject;
+import pageObjects.nopcommerce.user.UserHomePageObject;
+import pageObjects.nopcommerce.user.UserLoginPageObject;
+import pageObjects.nopcommerce.user.UserMyProductReviewsPageObject;
+import pageObjects.nopcommerce.user.UserOrdersPageObject;
+import pageObjects.nopcommerce.user.UserRegisterPageObject;
+import pageObjects.nopcommerce.user.UserRewardPointsPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -101,15 +101,15 @@ public class Level7_Switch_Page extends BaseTest{
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	BasePage basePage;
-	HomePageObject homePage;
-	LoginPageObject loginPage;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
 	private String firstName, lastName, email, password;
-	private RegisterPageObject registerPage;
-	private CustomerInfoPageObject customerInfoPage;
-	private AddressesPageObject addressesPage;
-	private OrdersPageObject ordersPage;
-	private RewardPointsPageObject rewardPointsPage;
-	private MyProductReviewsPageObject myProductReviewPage;
+	private UserRegisterPageObject registerPage;
+	private UserCustomerInfoPageObject customerInfoPage;
+	private UserAddressesPageObject addressesPage;
+	private UserOrdersPageObject ordersPage;
+	private UserRewardPointsPageObject rewardPointsPage;
+	private UserMyProductReviewsPageObject myProductReviewPage;
 
 	@AfterClass
 	public void afterClass() {

@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 
 import common.BasePage;
 import common.BaseTest;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.RegisterPageObject;
+import pageObjects.nopcommerce.user.UserHomePageObject;
+import pageObjects.nopcommerce.user.UserLoginPageObject;
+import pageObjects.nopcommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -24,9 +24,9 @@ public class Level4_Page_Object_Browser extends BaseTest{
 	WebDriver driver;
 	String email;
 	BasePage basePage;
-	HomePageObject homePage;
-	LoginPageObject loginPage;
-	RegisterPageObject registerPage;
+	UserHomePageObject homePage;
+	UserLoginPageObject loginPage;
+	UserRegisterPageObject registerPage;
 	private String firstName;
 	private String lastName;
 
@@ -37,9 +37,9 @@ public class Level4_Page_Object_Browser extends BaseTest{
 		driver = getBrowserDriver(browserName);
 		email = "Automation" + getRandomNumber() + "@hotmail.com";
 		System.out.println(email);		
-		homePage = new HomePageObject(driver);
-		loginPage = new LoginPageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		firstName = "Automation";
 		lastName = "FC";
 	}
