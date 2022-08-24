@@ -16,17 +16,17 @@ public class UserHomePageObject extends BasePage{
 
 	public UserRegisterPageObject clickToRegisterLink() {
 		clickToElement(driver, UserHomePageUI.REGISTER_LINK);
-		return PageGeneratorManager.getRegisterPage(driver);
+		return PageGeneratorManager.getUserRegisterPage(driver);
 	}
 	
 	public UserCustomerInfoPageObject clickToMyAccountLink() {
 		clickToElement(driver, UserHomePageUI.MY_ACCOUNT_LINK);
-		return PageGeneratorManager.getCustomerInfoPage(driver);
+		return PageGeneratorManager.getUserCustomerInfoPage(driver);
 	}
 
 	public UserLoginPageObject clickToLoginLink() {
 		clickToElement(driver, UserHomePageUI.LOGIN_LINK);
-		return PageGeneratorManager.getLoginPage(driver);
+		return PageGeneratorManager.getUserLoginPage(driver);
 	}
 
 	public boolean isHomePageDisplays() {

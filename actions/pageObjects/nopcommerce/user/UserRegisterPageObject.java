@@ -61,10 +61,10 @@ public class UserRegisterPageObject extends BasePage{
 		return getElementText(driver, UserRegisterPageUI.REGISTER_COMPLETE_MESSAGE);
 	}
 
-	public UserHomePageObject clickToLogoutLink() {
-		clickToElement(driver, UserRegisterPageUI.LOG_OUT_LINK);
-		return PageGeneratorManager.getHomePage(driver);
-	}
+//	public UserHomePageObject clickToLogoutLink() {
+//		clickToElement(driver, UserRegisterPageUI.LOG_OUT_LINK);
+//		return PageGeneratorManager.getUserHomePage(driver);
+//	}
 
 	public String getRegisterDuplicatedErrorMessage() {
 		return getElementText(driver, UserRegisterPageUI.REGISTER_DUPLICATED_ERROR_MESSAGE);

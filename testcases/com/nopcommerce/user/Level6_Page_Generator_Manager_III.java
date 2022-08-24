@@ -40,7 +40,7 @@ public class Level6_Page_Generator_Manager_III extends BaseTest{
 		validPassword = "123456";
 		invalidPassword = "654321";
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		System.out.println("Precondition_01 - Step1: Click to Register Link");
 		registerPage = homePage.clickToRegisterLink();
@@ -59,7 +59,7 @@ public class Level6_Page_Generator_Manager_III extends BaseTest{
 		System.out.println("Precondition_01 - Step7: Verify that register is completed successfully");
 		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed");
 		System.out.println("Precondition_01 - Step8: Click to Logout Link");
-		homePage = registerPage.clickToLogoutLink();
+		homePage = registerPage.logoutAsUser(driver);
 	}
 	
 	@Test

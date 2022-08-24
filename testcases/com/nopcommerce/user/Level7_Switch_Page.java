@@ -39,7 +39,7 @@ public class Level7_Switch_Page extends BaseTest{
 	
 	@Test
 	public void User_01_Register() {
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		System.out.println("User_01_Register - Step1: Click to Register Link");
 		registerPage = homePage.clickToRegisterLink();
@@ -58,7 +58,7 @@ public class Level7_Switch_Page extends BaseTest{
 		System.out.println("User_01_Register - Step7: Verify that register is completed successfully");
 		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed");
 		System.out.println("User_01_Register - Step8: Click to Logout Link");
-		homePage = registerPage.clickToLogoutLink();
+		homePage = registerPage.logoutAsUser(driver);
 	}
 	
 	@Test
@@ -113,6 +113,6 @@ public class Level7_Switch_Page extends BaseTest{
 
 	@AfterClass
 	public void afterClass() {
-//		driver.quit();
+		driver.quit();
 	}
 }

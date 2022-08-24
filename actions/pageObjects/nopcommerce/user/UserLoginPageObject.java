@@ -13,11 +13,6 @@ public class UserLoginPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public UserHomePageObject clickToLogInButton() {
-		clickToElement(driver, UserLoginPageUI.LOGIN_BUTTON);
-		return PageGeneratorManager.getHomePage(driver);
-	}
-
 	public String getErrorMessageAtEmailTextbox() {
 		return getElementText(driver, UserLoginPageUI.EMAIL_ERROR_MESSAGE);
 	}
@@ -28,6 +23,17 @@ public class UserLoginPageObject extends BasePage {
 
 	public void inputToPasswordTextbox(String password) {
 		sendKeyToElement(driver, UserLoginPageUI.PASSWORD_TEXTBOX, password);		
+	}
+	
+	public UserHomePageObject clickToLogInButton() {
+		clickToElement(driver, UserLoginPageUI.LOGIN_BUTTON);
+		return PageGeneratorManager.getUserHomePage(driver);
+	}
+	
+	public UserHomePageObject loginAsUser(String email, String password) {
+		inputToEmailTextbox(email);
+		inputToPasswordTextbox(password);
+		return clickToLogInButton();
 	}
 
 	public String getUnsuccessfulErrorMessage() {

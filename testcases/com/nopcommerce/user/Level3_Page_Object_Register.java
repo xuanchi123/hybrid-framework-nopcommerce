@@ -103,7 +103,7 @@ public class Level3_Page_Object_Register {
 		System.out.println("REGISTER_03 - Step7: Verify that register is completed successfully");
 		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed");
 		System.out.println("REGISTER_03 - Step8: Click to Logout Link");
-		registerPage.clickToLogoutLink();
+		registerPage.logoutAsUser(driver);
 	}
 	
 	@Test

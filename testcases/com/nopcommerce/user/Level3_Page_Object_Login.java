@@ -63,7 +63,7 @@ public class Level3_Page_Object_Login {
 		System.out.println("Precondition_01 - Step7: Verify that register is completed successfully");
 		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed");
 		System.out.println("Precondition_01 - Step8: Click to Logout Link");
-		registerPage.clickToLogoutLink();
+		registerPage.logoutAsUser(driver);
 		homePage = new UserHomePageObject(driver);
 	}
 	

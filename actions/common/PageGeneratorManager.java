@@ -2,6 +2,8 @@ package common;
 
 import org.openqa.selenium.WebDriver;
 
+import pageObjects.nopcommerce.admin.AdminDashboardPageObject;
+import pageObjects.nopcommerce.admin.AdminLoginPageObject;
 import pageObjects.nopcommerce.user.UserAddressesPageObject;
 import pageObjects.nopcommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.user.UserHomePageObject;
@@ -12,35 +14,43 @@ import pageObjects.nopcommerce.user.UserRegisterPageObject;
 import pageObjects.nopcommerce.user.UserRewardPointsPageObject;
 
 public class PageGeneratorManager {
-	public static UserHomePageObject getHomePage(WebDriver driver) {
+	public static UserHomePageObject getUserHomePage(WebDriver driver) {
 		return new UserHomePageObject(driver);
 	}
 	
-	public static UserLoginPageObject getLoginPage(WebDriver driver) {
+	public static UserLoginPageObject getUserLoginPage(WebDriver driver) {
 		return new UserLoginPageObject(driver);
 	}
 	
-	public static UserRegisterPageObject getRegisterPage(WebDriver driver) {
+	public static UserRegisterPageObject getUserRegisterPage(WebDriver driver) {
 		return new UserRegisterPageObject(driver);
 	}
 	
-	public static UserCustomerInfoPageObject getCustomerInfoPage(WebDriver driver) {
+	public static UserCustomerInfoPageObject getUserCustomerInfoPage(WebDriver driver) {
 		return new UserCustomerInfoPageObject(driver);
 	}
 	
-	public static UserAddressesPageObject getAddressesPage(WebDriver driver) {
+	public static UserAddressesPageObject getUserAddressesPage(WebDriver driver) {
 		return new UserAddressesPageObject(driver);
 	}
 	
-	public static UserOrdersPageObject getOrderPage(WebDriver driver) {
+	public static UserOrdersPageObject getUserOrderPage(WebDriver driver) {
 		return new UserOrdersPageObject(driver);
 	}
 	
-	public static UserRewardPointsPageObject getRewardPointsPage(WebDriver driver) {
+	public static UserRewardPointsPageObject getUserRewardPointsPage(WebDriver driver) {
 		return new UserRewardPointsPageObject(driver);
 	}
 	
-	public static UserMyProductReviewsPageObject getMyProductReviewsPage(WebDriver driver) {
+	public static UserMyProductReviewsPageObject getUserMyProductReviewsPage(WebDriver driver) {
 		return new UserMyProductReviewsPageObject(driver);
+	}
+	
+	public static AdminLoginPageObject getAdminLoginPage(WebDriver driver) {
+		return new AdminLoginPageObject(driver);
+	}
+	
+	public static AdminDashboardPageObject getAdminDashboardPage(WebDriver driver) {
+		return new AdminDashboardPageObject(driver);
 	}
 }
