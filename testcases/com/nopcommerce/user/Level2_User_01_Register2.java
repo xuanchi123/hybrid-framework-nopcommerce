@@ -38,11 +38,11 @@ public class Level2_User_01_Register2 extends BasePage{
 		clickToElement(driver, "//a[@class='ico-register']");
 		clickToElement(driver, "//button[@id='register-button']");
 		
-		Assert.assertEquals(getElementText(driver, "//span[@id='FirstName-error']"), "First name is required.");
-		Assert.assertEquals(getElementText(driver, "//span[@id='LastName-error']"), "Last name is required.");
-		Assert.assertEquals(getElementText(driver, "//span[@id='Email-error']"), "Email is required.");
-		Assert.assertEquals(getElementText(driver, "//span[@id='Password-error']"), "Password is required.");
-		Assert.assertEquals(getElementText(driver, "//span[@id='ConfirmPassword-error']"), "Password is required.");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='FirstName-error']"), "First name is required.");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='LastName-error']"), "Last name is required.");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='Email-error']"), "Email is required.");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='Password-error']"), "Password is required.");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='ConfirmPassword-error']"), "Password is required.");
 	}
 	
 	@Test
@@ -53,7 +53,7 @@ public class Level2_User_01_Register2 extends BasePage{
 		sendKeyToElement(driver, "//input[@id='Email']", "Automation");
 		clickToElement(driver, "//button[@id='register-button']");
 		
-		Assert.assertEquals(getElementText(driver, "//span[@id='Email-error']"), "Wrong email");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='Email-error']"), "Wrong email");
 			
 	}
 	
@@ -68,7 +68,7 @@ public class Level2_User_01_Register2 extends BasePage{
 		sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
 		clickToElement(driver, "//button[@id='register-button']");
 		
-		Assert.assertEquals(getElementText(driver, "//div[@class='result']"), "Your registration completed");
+		Assert.assertEquals(getTextInElement(driver, "//div[@class='result']"), "Your registration completed");
 		clickToElement(driver, "//a[@class='ico-logout']");
 	}
 	
@@ -83,7 +83,7 @@ public class Level2_User_01_Register2 extends BasePage{
 		sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
 		clickToElement(driver, "//button[@id='register-button']");
 		
-		Assert.assertEquals(getElementText(driver, "//div[contains(@class,'message-error')]//li"), "The specified email already exists");
+		Assert.assertEquals(getTextInElement(driver, "//div[contains(@class,'message-error')]//li"), "The specified email already exists");
 	}
 	
 	@Test
@@ -96,7 +96,7 @@ public class Level2_User_01_Register2 extends BasePage{
 		sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
 		clickToElement(driver, "//button[@id='register-button']");
 		
-		Assert.assertEquals(getElementText(driver, "//span[@id='Password-error']"), "Password must meet the following rules:\nmust have at least 6 characters");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='Password-error']"), "Password must meet the following rules:\nmust have at least 6 characters");
 	}
 	
 	@Test
@@ -109,7 +109,7 @@ public class Level2_User_01_Register2 extends BasePage{
 		sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "456");
 		clickToElement(driver, "//button[@id='register-button']");
 		
-		Assert.assertEquals(getElementText(driver, "//span[@id='ConfirmPassword-error']"), "The password and confirmation password do not match.");
+		Assert.assertEquals(getTextInElement(driver, "//span[@id='ConfirmPassword-error']"), "The password and confirmation password do not match.");
 	}
 
 	public int getRandomNumber() {

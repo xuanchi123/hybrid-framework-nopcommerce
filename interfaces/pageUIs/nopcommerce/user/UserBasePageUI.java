@@ -13,4 +13,5 @@ public class UserBasePageUI {
 	public static final String REWARD_POINTS_LINK ="xpath=//li[contains(@class,'reward-points')]/a";
 	public static final String MY_PRODUCT_REVIEWS_LINK ="xpath=//li[contains(@class,'customer-review')]/a";
 	public static final String PAGE_TITLE = "xpath=//div[@class='page-title']/h1";
+	public static final String DYNAMIC_MENU_LINK = "xpath=//div[contains(@class,'%s')]//a[text()='%s']";
 }

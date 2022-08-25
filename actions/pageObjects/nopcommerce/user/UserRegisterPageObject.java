@@ -18,23 +18,23 @@ public class UserRegisterPageObject extends BasePage{
 	}
 	
 	public String getErrorMessageAtFirstNameTextbox() {
-		return getElementText(driver, UserRegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
+		return getTextInElement(driver, UserRegisterPageUI.FIRST_NAME_ERROR_MESSAGE);
 	}
 	
 	public String getErrorMesssageAtLastNameTextbox() {
-		return getElementText(driver, UserRegisterPageUI.LAST_NAME_ERROR_MESSAGE);
+		return getTextInElement(driver, UserRegisterPageUI.LAST_NAME_ERROR_MESSAGE);
 	}
 	
 	public String getErrorMessageAtEmailTextbox() {
-		return getElementText(driver, UserRegisterPageUI.EMAIL_ERROR_MESSAGE);
+		return getTextInElement(driver, UserRegisterPageUI.EMAIL_ERROR_MESSAGE);
 	}
 	
 	public String getErrorMessageAtPasswordTextbox() {
-		return getElementText(driver, UserRegisterPageUI.PASSWORD_ERROR_MESSAGE);
+		return getTextInElement(driver, UserRegisterPageUI.PASSWORD_ERROR_MESSAGE);
 	}
 
 	public String getErrorMessageAtConfirmPasswordTextbox() {
-		return getElementText(driver, UserRegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
+		return getTextInElement(driver, UserRegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
 	}
 
 	public void inputToFirstNameTextbox(String firstName) {
@@ -58,7 +58,7 @@ public class UserRegisterPageObject extends BasePage{
 	}
 	
 	public String getRegisterCompleteMessage() {
-		return getElementText(driver, UserRegisterPageUI.REGISTER_COMPLETE_MESSAGE);
+		return getTextInElement(driver, UserRegisterPageUI.REGISTER_COMPLETE_MESSAGE);
 	}
 
 //	public UserHomePageObject clickToLogoutLink() {
@@ -67,6 +67,6 @@ public class UserRegisterPageObject extends BasePage{
 //	}
 
 	public String getRegisterDuplicatedErrorMessage() {
-		return getElementText(driver, UserRegisterPageUI.REGISTER_DUPLICATED_ERROR_MESSAGE);
+		return getTextInElement(driver, UserRegisterPageUI.REGISTER_DUPLICATED_ERROR_MESSAGE);
 	}
 }

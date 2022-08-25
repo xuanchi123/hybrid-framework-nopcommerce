@@ -14,7 +14,7 @@ public class UserLoginPageObject extends BasePage {
 	}
 
 	public String getErrorMessageAtEmailTextbox() {
-		return getElementText(driver, UserLoginPageUI.EMAIL_ERROR_MESSAGE);
+		return getTextInElement(driver, UserLoginPageUI.EMAIL_ERROR_MESSAGE);
 	}
 
 	public void inputToEmailTextbox(String email) {
@@ -37,6 +37,6 @@ public class UserLoginPageObject extends BasePage {
 	}
 
 	public String getUnsuccessfulErrorMessage() {
-		return getElementText(driver, UserLoginPageUI.UNSUCCESSFUL_MESSAGE);
+		return getTextInElement(driver, UserLoginPageUI.UNSUCCESSFUL_MESSAGE);
 	}
 }

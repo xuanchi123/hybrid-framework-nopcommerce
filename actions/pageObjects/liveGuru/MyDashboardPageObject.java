@@ -12,6 +12,6 @@ public class MyDashboardPageObject extends BasePage{
 	}
 
 	public String getHelloText() {
-		return getElementText(driver, MyDashboardPageUI.HELLO_TEXT);
+		return getTextInElement(driver, MyDashboardPageUI.HELLO_TEXT);
 	}	
 }
