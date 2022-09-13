@@ -71,7 +71,7 @@ public class Level8_Switch_Roles extends BaseTest{
 		
 		userHomePage = userRegisterPage.logoutAsUser(driver);
 		
-		userHomePage.openPageURL(driver, GlobalConstants.ADMIN_URL);
+		userHomePage.openPageURL(driver, GlobalConstants.ADMIN_DEV_URL);
 		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
 		adminDashboardPage = adminLoginPage.loginAsAdmin(adminEmail, adminPassword);
 		Assert.assertTrue(adminDashboardPage.isDashboardPageDisplays());
@@ -80,7 +80,7 @@ public class Level8_Switch_Roles extends BaseTest{
 	
 	@Test
 	public void Role_02_Admin_To_Portal_Page() {
-		adminLoginPage.openPageURL(driver, GlobalConstants.PORTAL_URL);
+		adminLoginPage.openPageURL(driver, GlobalConstants.PORTAL_DEV_URL);
 		userHomePage = PageGeneratorManager.getUserHomePage(driver);
 		userLoginPage = userHomePage.clickToLoginLink();
 		userHomePage = userLoginPage.loginAsUser(userEmail, userPassword);

@@ -29,7 +29,7 @@ import pageUIs.nopcommerce.user.UserRegisterPageUI;
 
 
 public class BasePage {
-	private long longTimeout;
+	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	private JavascriptExecutor jsExecutor;
 	
 	public static BasePage getBasePageObject() {
