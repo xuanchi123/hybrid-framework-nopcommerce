@@ -28,11 +28,11 @@ public class Level5_Page_Factory_Login extends BaseTest {
 	private String firstName, lastName, notExistEmail, invalidEmail, existEmail, invalidPassword, validPassword;
 	private RegisterPageObject registerPage;
 
-	@Parameters("browser")
+	@Parameters({"browser", "browserURL"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String browserURL) {
 		System.out.println("---------Browser: " + browserName + " -------------");
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, browserURL);
 		
 		firstName = "Automation";
 		lastName = "FC";

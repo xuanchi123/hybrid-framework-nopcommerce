@@ -26,11 +26,11 @@ public class Level6_Page_Generator_Manager_III extends BaseTest{
 	private String firstName, lastName, notExistEmail, invalidEmail, existEmail, invalidPassword, validPassword;
 	private UserRegisterPageObject registerPage;
 
-	@Parameters("browser")
+	@Parameters({"browser", "browserURL"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String browserURL) {
 		System.out.println("---------Browser: " + browserName + " -------------");
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, browserURL);
 		
 		firstName = "Automation";
 		lastName = "FC";

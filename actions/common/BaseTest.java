@@ -11,7 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
-	protected WebDriver getBrowserDriver(String browserName) {
+	protected WebDriver getBrowserDriver(String browserName, String browserURL) {
 		switch (browserName) {
 		case "firefox":
 			driver = WebDriverManager.firefoxdriver().create();
@@ -38,7 +38,7 @@ public class BaseTest {
 			throw new RuntimeException("Invalid driver");
 		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-		driver.get("https://demo.nopcommerce.com/");
+		driver.get(browserURL);
 //		driver.get("http://live.techpanda.org/");
 		driver.manage().window().fullscreen();	
 		return driver;

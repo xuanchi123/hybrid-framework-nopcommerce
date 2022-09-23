@@ -1,20 +1,20 @@
-package pageObjects.liveGuru;
+package pageObjects.liveGuru.user;
 
 import org.openqa.selenium.WebDriver;
 
 import common.BasePage;
-import pageUIs.liveGuru.LoginPageUI;
+import pageUIs.liveGuru.user.LoginPageUI;
 
-public class LoginPageObject extends BasePage{
+public class UserLoginPageObject extends BasePage{
 	WebDriver driver;
 
-	public LoginPageObject(WebDriver driver) {
+	public UserLoginPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public RegisterPageObject clickToCreateAnAccountButton() {
+	public UserRegisterPageObject clickToCreateAnAccountButton() {
 		clickToElement(driver, LoginPageUI.CREATE_AN_ACCOUNT_BUTTON);
-		return PageGeneratorManager.getRegisterPage(driver);
+		return UserPageGeneratorManager.getRegisterPage(driver);
 	}
 
 	public void inputToEmailAddressTextbox(String emailAddress) {
@@ -25,8 +25,8 @@ public class LoginPageObject extends BasePage{
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
-	public MyDashboardPageObject clickToLoginButton() {
+	public UserMyDashboardPageObject clickToLoginButton() {
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return PageGeneratorManager.getMyDashboardPage(driver);
+		return UserPageGeneratorManager.getMyDashboardPage(driver);
 	}
 }

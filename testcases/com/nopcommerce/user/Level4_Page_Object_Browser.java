@@ -30,11 +30,11 @@ public class Level4_Page_Object_Browser extends BaseTest{
 	private String firstName;
 	private String lastName;
 
-	@Parameters("browser")
+	@Parameters({"browser", "browserURL"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String browserURL) {
 		System.out.println("---------Browser: " + browserName + " -------------");
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, browserURL);
 		email = "Automation" + getRandomNumber() + "@hotmail.com";
 		System.out.println(email);		
 		homePage = new UserHomePageObject(driver);

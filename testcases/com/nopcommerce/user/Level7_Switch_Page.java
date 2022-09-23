@@ -24,11 +24,11 @@ import org.testng.annotations.AfterClass;
 
 public class Level7_Switch_Page extends BaseTest{
 
-	@Parameters("browser")
+	@Parameters({"browser", "browserURL"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
+	public void beforeClass(String browserName, String browserURL) {
 		System.out.println("---------Browser: " + browserName + " -------------");
-		driver = getBrowserDriver(browserName);
+		driver = getBrowserDriver(browserName, browserURL);
 
 		firstName = "Automation";
 		lastName = "FC";

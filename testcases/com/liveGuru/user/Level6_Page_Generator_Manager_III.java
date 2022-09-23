@@ -4,11 +4,11 @@ package com.liveGuru.user;
 import org.testng.annotations.Test;
 
 import common.BaseTest;
-import pageObjects.liveGuru.HomePageObject;
-import pageObjects.liveGuru.LoginPageObject;
-import pageObjects.liveGuru.MyDashboardPageObject;
-import pageObjects.liveGuru.PageGeneratorManager;
-import pageObjects.liveGuru.RegisterPageObject;
+import pageObjects.liveGuru.user.UserHomePageObject;
+import pageObjects.liveGuru.user.UserLoginPageObject;
+import pageObjects.liveGuru.user.UserMyDashboardPageObject;
+import pageObjects.liveGuru.user.UserPageGeneratorManager;
+import pageObjects.liveGuru.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -18,10 +18,11 @@ import org.testng.annotations.AfterClass;
 
 public class Level6_Page_Generator_Manager_III extends BaseTest{
 
-	@Parameters("browser")
+	@Parameters({"browser", "browserURL"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName);
+	public void beforeClass(String browserName, String browserURL) {
+		System.out.println("---------Browser: " + browserName + " -------------");
+		driver = getBrowserDriver(browserName, browserURL);
 		
 		firstName = "Automation";
 		lastName = "FC";
@@ -29,7 +30,7 @@ public class Level6_Page_Generator_Manager_III extends BaseTest{
 		password = "123456";
 		System.out.println("--------------------------Email is: " + emailAddress);
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = UserPageGeneratorManager.getHomePage(driver);
 	}
 	
 	@Test
@@ -57,10 +58,10 @@ public class Level6_Page_Generator_Manager_III extends BaseTest{
 	}
 	
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	MyDashboardPageObject myDashboardPage;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
+	UserLoginPageObject loginPage;
+	UserMyDashboardPageObject myDashboardPage;
 	private String firstName, lastName, emailAddress, password;
 	
 	@AfterClass
