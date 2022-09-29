@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="NopCommerce">
+  <test name="Run on Firefox">
+	<parameter name="browser" value="firefox"/>
+	<parameter name="browserURL" value="https://blueimp.github.io/jQuery-File-Upload/"/>
+    <classes>
+      <class name="com.jquery.file.upload.Level11_File_Upload"/>
+    </classes>
+  </test> 
+</suite> 

@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import PageUI.jquery.file.upload.HomePageUI;
 import pageObjects.nopcommerce.admin.AdminLoginPageObject;
 import pageObjects.nopcommerce.user.UserAddressesPageObject;
 import pageObjects.nopcommerce.user.UserCustomerInfoPageObject;
@@ -29,7 +30,7 @@ import pageUIs.nopcommerce.user.UserRegisterPageUI;
 
 public class BasePage {
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
-	private JavascriptExecutor jsExecutor;
+//	private JavascriptExecutor jsExecutor;
 
 	public static BasePage getBasePageObject() {
 		return new BasePage();
@@ -187,6 +188,7 @@ public class BasePage {
 
 	protected void selectItemInCustomDropdown(WebDriver driver, String parentLocatorType, String childItemLocatorType,
 			String expectedItem) {
+		JavascriptExecutor jsExecutor;
 		getWebElement(driver, parentLocatorType).click();
 		sleepInSecond(1);
 
@@ -289,11 +291,13 @@ public class BasePage {
 //	  }
 
 	protected void scrollToBottomPage(WebDriver driver) {
+		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
 
 	protected void highlightElement(WebDriver driver, String locatorType, String... dynamicValues) {
+		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		String originalStyle = element.getAttribute("style");
@@ -305,23 +309,27 @@ public class BasePage {
 	}
 
 	protected void clickToElementByJS(WebDriver driver, String locatorType, String... dynamicValues) {
+		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].click();",
 				getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
 	}
 
 	protected void scrollToElement(WebDriver driver, String locatorType) {
+		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
 	}
 
 	protected void removeAttributeInDOM(WebDriver driver, String locatorType, String attributeRemove) {
+		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');",
 				getWebElement(driver, locatorType));
 	}
 
 	protected boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
+		JavascriptExecutor jsExecutor;
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		jsExecutor = (JavascriptExecutor) driver;
 
@@ -347,12 +355,14 @@ public class BasePage {
 	}
 
 	protected String getElementValidationMessage(WebDriver driver, String locatorType) {
+		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		return (String) jsExecutor.executeScript("return arguments[0].validationMessage;",
 				getWebElement(driver, locatorType));
 	}
 
 	protected boolean isImageLoaded(WebDriver driver, String locatorType) {
+		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		boolean status = (boolean) jsExecutor.executeScript(
 				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
@@ -362,6 +372,16 @@ public class BasePage {
 		} else {
 			return false;
 		}
+	}
+	
+	protected boolean isImageLoaded(WebDriver driver, String locatorType, String ...dynamicValues) {
+		JavascriptExecutor jsExecutor;
+		jsExecutor = (JavascriptExecutor) driver;
+		boolean status = false; 
+		status = (boolean) jsExecutor.executeScript(
+				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+				getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
+		return status;
 	}
 
 	protected WebElement waitForElementVisible(WebDriver driver, String locatorType, String... dynamicValues) {
@@ -452,5 +472,17 @@ public class BasePage {
 	public UserHomePageObject logoutAsUser(WebDriver driver) {
 		clickToElement(driver, UserRegisterPageUI.LOG_OUT_LINK);
 		return PageGeneratorManager.getUserHomePage(driver);
+	}
+	
+	public void uploadMultipleFilesByFilenames(WebDriver driver, String... fileNames) {
+		String filePath = GlobalConstants.UPLOAD_FILE;
+		String fullFileName ="";
+		for (String file : fileNames) {
+			fullFileName = fullFileName + filePath + file + "\n";			
+		}
+		fullFileName = fullFileName.trim();
+		
+		System.out.println("Full Files Name is: " + fullFileName);
+		getWebElement(driver, HomePageUI.UPLOAD_FILE).sendKeys(fullFileName);
 	}
 }
