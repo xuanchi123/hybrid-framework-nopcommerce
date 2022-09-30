@@ -30,7 +30,7 @@ import pageUIs.nopcommerce.user.UserRegisterPageUI;
 
 public class BasePage {
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
-//	private JavascriptExecutor jsExecutor;
+	private JavascriptExecutor jsExecutor;
 
 	public static BasePage getBasePageObject() {
 		return new BasePage();
@@ -188,7 +188,7 @@ public class BasePage {
 
 	protected void selectItemInCustomDropdown(WebDriver driver, String parentLocatorType, String childItemLocatorType,
 			String expectedItem) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		getWebElement(driver, parentLocatorType).click();
 		sleepInSecond(1);
 
@@ -291,13 +291,13 @@ public class BasePage {
 //	  }
 
 	protected void scrollToBottomPage(WebDriver driver) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
 
 	protected void highlightElement(WebDriver driver, String locatorType, String... dynamicValues) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		String originalStyle = element.getAttribute("style");
@@ -309,27 +309,27 @@ public class BasePage {
 	}
 
 	protected void clickToElementByJS(WebDriver driver, String locatorType, String... dynamicValues) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].click();",
 				getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
 	}
 
 	protected void scrollToElement(WebDriver driver, String locatorType) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
 	}
 
 	protected void removeAttributeInDOM(WebDriver driver, String locatorType, String attributeRemove) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');",
 				getWebElement(driver, locatorType));
 	}
 
 	protected boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		jsExecutor = (JavascriptExecutor) driver;
 
@@ -355,14 +355,14 @@ public class BasePage {
 	}
 
 	protected String getElementValidationMessage(WebDriver driver, String locatorType) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		return (String) jsExecutor.executeScript("return arguments[0].validationMessage;",
 				getWebElement(driver, locatorType));
 	}
 
 	protected boolean isImageLoaded(WebDriver driver, String locatorType) {
-		JavascriptExecutor jsExecutor;
+//		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		boolean status = (boolean) jsExecutor.executeScript(
 				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
@@ -375,11 +375,12 @@ public class BasePage {
 	}
 	
 	protected boolean isImageLoaded(WebDriver driver, String locatorType, String ...dynamicValues) {
-		JavascriptExecutor jsExecutor;
 		jsExecutor = (JavascriptExecutor) driver;
 		boolean status = false; 
+		
+		String dynamicXpath = getDynamicXpath(locatorType, dynamicValues);
 		status = (boolean) jsExecutor.executeScript(
-				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+				"return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0",
 				getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
 		return status;
 	}
