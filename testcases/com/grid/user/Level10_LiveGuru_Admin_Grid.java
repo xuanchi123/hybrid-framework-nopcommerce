@@ -3,9 +3,9 @@ package com.grid.user;
 
 import org.testng.annotations.Test;
 
-import common.BasePage;
-import common.BaseTest;
-import common.GlobalConstants;
+import commons.BasePage;
+import commons.BaseTest;
+import commons.GlobalConstants;
 import pageObjects.liveGuru.admin.AdminDashboardPageObject;
 import pageObjects.liveGuru.admin.AdminLoginPageObject;
 import pageObjects.liveGuru.admin.AdminPageGeneratorManager;

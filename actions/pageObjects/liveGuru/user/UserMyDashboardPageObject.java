@@ -1,7 +1,8 @@
 package pageObjects.liveGuru.user;
 
 import org.openqa.selenium.WebDriver;
-import common.BasePage;
+
+import commons.BasePage;
 import pageUIs.liveGuru.user.MyDashboardPageUI;
 
 public class UserMyDashboardPageObject extends BasePage{

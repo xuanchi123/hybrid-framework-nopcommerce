@@ -3,9 +3,9 @@ package com.grid.user;
 
 import org.testng.annotations.Test;
 
-import common.BasePage;
-import common.BaseTest;
-import common.PageGeneratorManagerGrid;
+import commons.BasePage;
+import commons.BaseTest;
+import commons.PageGeneratorManagerGrid;
 import pageObjects.grid.user.AppendGridPageObject;
 import pageObjects.grid.user.QuickGridPageObject;
 

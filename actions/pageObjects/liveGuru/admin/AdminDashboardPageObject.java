@@ -2,7 +2,7 @@ package pageObjects.liveGuru.admin;
 
 import org.openqa.selenium.WebDriver;
 
-import common.BasePage;
+import commons.BasePage;
 import pageUIs.liveGuru.admin.DashboardPageUI;
 import pageUIs.liveGuru.admin.LoginPageUI;
 

@@ -2,8 +2,8 @@ package pageObjects.nopcommerce.admin;
 
 import org.openqa.selenium.WebDriver;
 
-import common.BasePage;
-import common.PageGeneratorManager;
+import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.liveGuru.user.MyDashboardPageUI;
 import pageUIs.nopcommerce.admin.AdminDashboardPageUI;
 import pageUIs.nopcommerce.user.UserLoginPageUI;

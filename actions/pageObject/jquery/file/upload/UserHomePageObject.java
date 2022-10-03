@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import PageUI.jquery.file.upload.HomePageUI;
-import common.BasePage;
-import common.GlobalConstants;
+import commons.BasePage;
+import commons.GlobalConstants;
 
 public class UserHomePageObject extends BasePage{
 	WebDriver driver;
@@ -25,7 +25,7 @@ public class UserHomePageObject extends BasePage{
 		List<WebElement> startButtons = getListWebElements(driver, HomePageUI.START_BUTTONS);
 		for (WebElement button : startButtons) {
 			button.click();
-			sleepInSecond(2);			
+			sleepInSecond(3);			
 		}
 	}
 

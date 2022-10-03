@@ -3,7 +3,7 @@ package com.liveGuru.user;
 
 import org.testng.annotations.Test;
 
-import common.BaseTest;
+import commons.BaseTest;
 import pageObjects.liveGuru.user.UserHomePageObject;
 import pageObjects.liveGuru.user.UserLoginPageObject;
 import pageObjects.liveGuru.user.UserMyDashboardPageObject;

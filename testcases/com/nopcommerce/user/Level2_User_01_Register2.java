@@ -2,7 +2,7 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import common.BasePage;
+import commons.BasePage;
 
 import org.testng.annotations.BeforeClass;
 

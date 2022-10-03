@@ -6,23 +6,22 @@ import org.testng.annotations.Test;
 import commons.BasePage;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObjects.nopcommerce.user.UserAddressesPageObject;
-import pageObjects.nopcommerce.user.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.user.UserHomePageObject;
 import pageObjects.nopcommerce.user.UserLoginPageObject;
-import pageObjects.nopcommerce.user.UserMyProductReviewsPageObject;
-import pageObjects.nopcommerce.user.UserOrdersPageObject;
+
 import pageObjects.nopcommerce.user.UserRegisterPageObject;
-import pageObjects.nopcommerce.user.UserRewardPointsPageObject;
+
 
 import org.testng.annotations.BeforeClass;
+
 import org.testng.annotations.Parameters;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+
 import org.testng.annotations.AfterClass;
 
-public class Level7_Switch_Page extends BaseTest{
+//@Listeners(commons.MethodListener.class)
+public class Level12_Assert_Verify extends BaseTest{
 
 	@Parameters({"browser", "browserURL"})
 	@BeforeClass
@@ -56,46 +55,22 @@ public class Level7_Switch_Page extends BaseTest{
 		registerPage.inputToConfirmPasswordTextbox(password);
 		registerPage.clickToRegisterButton();
 		System.out.println("User_01_Register - Step7: Verify that register is completed successfully");
-		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed");
+		
+		verifyEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed - wrong message");
 		System.out.println("User_01_Register - Step8: Click to Logout Link");
 		homePage = registerPage.logoutAsUser(driver);
-	}
-	
-	@Test
-	public void User_02_Login() {
-		System.out.println("User_02_Login - Step1: Click to Login Link");
-		loginPage = homePage.clickToLoginLink();
-		System.out.println("User_02_Login - Step2: Input existing email to Email Textbox");
-		loginPage.inputToEmailTextbox(email);
-		System.out.println("User_02_Login - Step3: Input invalue to Password Textbox");
-		loginPage.inputToPasswordTextbox(password);
-		System.out.println("User_02_Login - Step4: Click to Login Button");
-		homePage = loginPage.clickToLogInButton();
-		System.out.println("User_02_Login - Step5: Verify Home Page displays");
-		Assert.assertTrue(homePage.isHomePageDisplays());
-	}
-	
-	@Test
-	public void User_03_Customer_Info() {
-		customerInfoPage = homePage.clickToMyAccountLink();
-		Assert.assertTrue(customerInfoPage.isCustomerInforPageDisplayed());
-	}
 
-	@Test
-	public void User_04_Switch_Page() {
-		addressesPage = customerInfoPage.openAddressesPage(driver);
-		Assert.assertTrue(addressesPage.isAddressesPageDisplayed());
-		ordersPage = addressesPage.openOrdersPage(driver);
-		Assert.assertTrue(ordersPage.isOrdersPageDisplayed());
+		System.out.println("User_01_Login - Step1: Click to Login Link");
+		loginPage = homePage.clickToLoginLink();
+		System.out.println("User_01_Login - Step2: Input existing email to Email Textbox");
+		loginPage.inputToEmailTextbox(email);
+		System.out.println("User_01_Login - Step3: Input invalue to Password Textbox");
+		loginPage.inputToPasswordTextbox(password);
+		System.out.println("User_01_Login - Step4: Click to Login Button");
+		homePage = loginPage.clickToLogInButton();
+		System.out.println("User_01_Login - Step5: Verify Home Page displays");
 		
-		rewardPointsPage = ordersPage.openRewardPointsPage(driver);
-		Assert.assertTrue(rewardPointsPage.isRewardPointsPageDisplayed());
-		
-		myProductReviewPage = rewardPointsPage.openMyProductReviewsPage(driver);
-		Assert.assertTrue(myProductReviewPage.isMyProductReviewsPageDisplayed());
-		
-		customerInfoPage = myProductReviewPage.openCustomerInfoPage(driver);
-		Assert.assertTrue(customerInfoPage.isCustomerInforPageDisplayed());
+		verifyTrue(homePage.isHomePageDisplays());
 	}
 	
 	WebDriver driver;
@@ -105,11 +80,6 @@ public class Level7_Switch_Page extends BaseTest{
 	UserLoginPageObject loginPage;
 	private String firstName, lastName, email, password;
 	private UserRegisterPageObject registerPage;
-	private UserCustomerInfoPageObject customerInfoPage;
-	private UserAddressesPageObject addressesPage;
-	private UserOrdersPageObject ordersPage;
-	private UserRewardPointsPageObject rewardPointsPage;
-	private UserMyProductReviewsPageObject myProductReviewPage;
 
 	@AfterClass
 	public void afterClass() {

@@ -3,9 +3,9 @@ package com.jquery.file.upload;
 
 import org.testng.annotations.Test;
 
-import common.BasePage;
-import common.BaseTest;
-import common.PageGeneratorManagerGrid;
+import commons.BasePage;
+import commons.BaseTest;
+import commons.PageGeneratorManagerGrid;
 import pageObject.jquery.file.upload.UploadPageGeneratorManager;
 import pageObject.jquery.file.upload.UserHomePageObject;
 import pageObjects.grid.user.QuickGridPageObject;
@@ -59,6 +59,6 @@ public class Level11_File_Upload extends BaseTest{
 	
 	@AfterClass
 	public void afterClass() {
-//		driver.quit();
+		driver.quit();
 	}
 }

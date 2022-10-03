@@ -3,8 +3,8 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import common.BasePage;
-import common.BaseTest;
+import commons.BasePage;
+import commons.BaseTest;
 import pageFactory.nopcommerce.HomePageObject;
 import pageFactory.nopcommerce.LoginPageObject;
 import pageFactory.nopcommerce.RegisterPageObject;

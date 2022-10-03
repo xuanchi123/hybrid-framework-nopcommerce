@@ -3,7 +3,7 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import common.BasePage;
+import commons.BasePage;
 import pageObjects.nopcommerce.user.UserHomePageObject;
 import pageObjects.nopcommerce.user.UserLoginPageObject;
 import pageObjects.nopcommerce.user.UserRegisterPageObject;

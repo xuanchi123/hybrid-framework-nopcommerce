@@ -3,10 +3,10 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import common.BasePage;
-import common.BaseTest;
-import common.GlobalConstants;
-import common.PageGeneratorManager;
+import commons.BasePage;
+import commons.BaseTest;
+import commons.GlobalConstants;
+import commons.PageGeneratorManager;
 import pageObjects.nopcommerce.admin.AdminDashboardPageObject;
 import pageObjects.nopcommerce.admin.AdminLoginPageObject;
 import pageObjects.nopcommerce.user.UserAddressesPageObject;
