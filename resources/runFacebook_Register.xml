@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="NopCommerce">
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+	</listeners>
+  <test name="Run on Firefox">
+	<parameter name="browser" value="firefox"/>
+	<parameter name="browserURL" value="https://www.facebook.com/"/>
+    <classes>
+      <class name="com.facebook.register.Level13_Element_Undisplayed"/>
+    </classes>
+  </test> 
+</suite> 
