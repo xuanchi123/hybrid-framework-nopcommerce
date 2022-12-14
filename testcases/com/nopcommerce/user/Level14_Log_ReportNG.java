@@ -17,11 +17,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import org.openqa.selenium.WebDriver;
-
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
 //@Listeners(commons.MethodListener.class)
-public class Level14_Log_Report extends BaseTest{
+public class Level14_Log_ReportNG extends BaseTest{
 
 	@Parameters({"browser", "browserURL"})
 	@BeforeClass
@@ -64,7 +64,7 @@ public class Level14_Log_Report extends BaseTest{
 		registerPage.clickToRegisterButton();
 		
 		log.info("Register - Step 09: Verify register completed message displays");
-		verifyEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed - wrong message");
+		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed - wrong message");
 		
 		log.info("Register - Step 10: Click to 'Logout' Link");
 		homePage = registerPage.logoutAsUser(driver);
@@ -85,7 +85,7 @@ public class Level14_Log_Report extends BaseTest{
 		homePage = loginPage.clickToLogInButton();
 		
 		log.info("Login - Step 05: Verify 'Home Page' displays");		
-		verifyTrue(homePage.isHomePageDisplays());
+		Assert.assertTrue(homePage.isHomePageDisplays());
 	}
 	
 	WebDriver driver;
