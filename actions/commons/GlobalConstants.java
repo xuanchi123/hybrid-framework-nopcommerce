@@ -16,6 +16,7 @@ public class GlobalConstants {
 	public static final String AUTO_IT_SCRIPT = PROJECT_PATH + File.separator + "autoIT";
 	public static final String REPORTNG_SCREENSHOT = PROJECT_PATH + File.separator + "ReportNGScreenShots" + File.separator;
 	public static final String EXTENT_PATH = PROJECT_PATH + File.separator + "ExtentReportV2" + File.separator;
+	public static final String EXTENT_V5_PATH = PROJECT_PATH + File.separator + "ExtentReportV5" + File.separator;
 	public static final String DB_DEV_URL = "32.18.252.185:9860";
 	public static final String DB_DEV_USER = "automationfc";
 	public static final String DB_DEV_PASS = "P@ssw0rk1!";
@@ -24,4 +25,5 @@ public class GlobalConstants {
 	public static final int RETRY_TEST_FAIL = 3;
 	public static final String LIVE_GURU_PORTAL_URL = "http://live.techpanda.org/";
 	public static final String LIVE_GURU_ADMIN_URL = "http://live.techpanda.org/index.php/backendlogin/customer/";
+	public static final String JAVA_VERSION = System.getProperty("java.version");
 }

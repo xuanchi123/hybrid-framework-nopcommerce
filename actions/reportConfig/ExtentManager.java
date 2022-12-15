@@ -1,5 +1,6 @@
 package reportConfig;
 
+/*
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,3 +34,4 @@ public class ExtentManager {
 		return test;
 	}
 }
+*/

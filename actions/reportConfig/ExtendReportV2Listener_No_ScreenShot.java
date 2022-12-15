@@ -1,5 +1,5 @@
 package reportConfig;
-
+/*
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +17,6 @@ import org.testng.xml.XmlSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
 
 public class ExtendReportV2Listener_No_ScreenShot implements IReporter {
     private ExtentReports extent;
@@ -72,3 +71,4 @@ public class ExtendReportV2Listener_No_ScreenShot implements IReporter {
 		Reporter.log(message);
 	}
 }
+*/

@@ -1,18 +1,19 @@
+
 package com.nopcommerce.user;
 
-/*
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.LogStatus;
+import com.aventstack.extentreports.Status;
 
-
+import commons.BasePage;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import pageObjects.nopcommerce.user.UserHomePageObject;
 import pageObjects.nopcommerce.user.UserLoginPageObject;
 
 import pageObjects.nopcommerce.user.UserRegisterPageObject;
-import reportConfig.ExtentManager;
+
+import reportConfig.ExtentTestManagerV5;
 
 import org.testng.annotations.BeforeClass;
 
@@ -23,11 +24,9 @@ import java.lang.reflect.Method;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-*/
-import commons.BaseTest;
 
-public class Level15_Extent_ReportV2_Log_Screenshot extends BaseTest{
-/*
+public class Level15_Extent_ReportV5 extends BaseTest{
+
 	@Parameters({"browser", "browserURL"})
 	@BeforeClass
 	public void beforeClass(String browserName, String browserURL) {
@@ -43,61 +42,57 @@ public class Level15_Extent_ReportV2_Log_Screenshot extends BaseTest{
 	
 	@Test
 	public void User_01_Register(Method method) {
-		ExtentManager.startTest(method.getName(), "TC_01_NewCustomer");
+		ExtentTestManagerV5.startTest(method.getName(), "TC_01_Register");
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 01: Navigate to 'User Home' page");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 01: Navigate to 'User Home' page");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 02: Click to 'Register' Link");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 02: Click to 'Register' Link");
 		registerPage = homePage.clickToRegisterLink();
 
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 03: Input to 'First Name' textbox");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 03: Input to 'First Name' textbox");
 		registerPage.inputToFirstNameTextbox(firstName);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 04: Input to 'Last Name' textbox");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 04: Input to 'Last Name' textbox");
 		registerPage.inputToLastNameTextbox(lastName);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 05: Input to 'Email' textbox");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 05: Input to 'Email' textbox");
 		registerPage.inputToEmailTextbox(email);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 06: Input to 'Password' textbox");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 06: Input to 'Password' textbox");
 		registerPage.inputToPasswordTextbox(password);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 07: Input to 'Confirm Password' textbox");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 07: Input to 'Confirm Password' textbox");
 		registerPage.inputToConfirmPasswordTextbox(password);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 08: Click to 'Register' button");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 08: Click to 'Register' button");
 		registerPage.clickToRegisterButton();
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Register - Step 09: Verify register completed message displays");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Register - Step 09: Verify register completed message displays");
 		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed - wrong message");
-		
-		ExtentManager.endTest();
 	}
 	
 	@Test
 	public void User_02_Login(Method method) {
-		ExtentManager.startTest(method.getName(), "TC_01_NewCustomer");
+		ExtentTestManagerV5.startTest(method.getName(), "TC_02_Login");
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Login - Step 01: Click to 'Logout' Link");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Login - Step 01: Click to 'Logout' Link");
 		homePage = registerPage.logoutAsUser(driver);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Login - Step 02: Click to 'Login' Link");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Login - Step 02: Click to 'Login' Link");
 		loginPage = homePage.clickToLoginLink();
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Login - Step 03: Input existing email to 'Email' Textbox");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Login - Step 03: Input existing email to 'Email' Textbox");
 		loginPage.inputToEmailTextbox(email);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Login - Step 04: Input value to 'Password' Textbox");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Login - Step 04: Input value to 'Password' Textbox");
 		loginPage.inputToPasswordTextbox(password);
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Login - Step 05: Click to 'Login' Button");
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Login - Step 05: Click to 'Login' Button");
 		homePage = loginPage.clickToLogInButton();
 		
-		ExtentManager.getTest().log(LogStatus.INFO, "Login - Step 06: Verify 'Home Page' displays");		
+		ExtentTestManagerV5.getTest().log(Status.INFO, "Login - Step 06: Verify 'Home Page' displays");		
 		Assert.assertTrue(homePage.isHomePageDisplays());
-		
-		ExtentManager.endTest();
 	}
 	
 	WebDriver driver;
@@ -112,6 +107,4 @@ public class Level15_Extent_ReportV2_Log_Screenshot extends BaseTest{
 	public void afterClass() {
 		driver.quit();
 	}
-	*/
 }
-

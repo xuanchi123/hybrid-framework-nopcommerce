@@ -1,5 +1,5 @@
 package reportConfig;
-
+/*
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -53,3 +53,4 @@ public class ExtendReportV2Listener_Log_ScreenShot extends BaseTest implements I
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 	}
 }
+*/

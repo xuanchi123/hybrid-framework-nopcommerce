@@ -6,13 +6,13 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 <!--        <listener class-name="reportConfig.ReportNGListener"/> -->
 <!--        <listener class-name="reportConfig.ExtendReportV2Listener_No_ScreenShot"/> -->
-        <listener class-name="reportConfig.ExtendReportV2Listener_Log_ScreenShot"/>
+        <listener class-name="reportConfig.ExtentReportV5Listener"/>
 	</listeners>
   <test name="Run on Firefox">
 	<parameter name="browser" value="firefox"/>
 	<parameter name="browserURL" value="https://demo.nopcommerce.com/"/>
     <classes>
-      <class name="com.nopcommerce.user.Level15_Extent_ReportV2_Log_Screenshot"/>
+      <class name="com.nopcommerce.user.Level15_Extent_ReportV5"/>
     </classes>
   </test> 
 </suite> 
