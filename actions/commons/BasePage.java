@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.File;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeSuite;
 
 import PageUI.jquery.file.upload.HomePageUI;
 import pageObjects.nopcommerce.admin.AdminLoginPageObject;

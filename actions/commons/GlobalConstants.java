@@ -15,6 +15,7 @@ public class GlobalConstants {
 	public static final String DRAG_DROP_HTML5 = PROJECT_PATH + File.separator + "dragDropHTML5";
 	public static final String AUTO_IT_SCRIPT = PROJECT_PATH + File.separator + "autoIT";
 	public static final String REPORTNG_SCREENSHOT = PROJECT_PATH + File.separator + "ReportNGScreenShots" + File.separator;
+	public static final String ALLURE_JSON = PROJECT_PATH + File.separator + "allure-json" + File.separator;
 	public static final String EXTENT_PATH = PROJECT_PATH + File.separator + "ExtentReportV2" + File.separator;
 	public static final String EXTENT_V5_PATH = PROJECT_PATH + File.separator + "ExtentReportV5" + File.separator;
 	public static final String DB_DEV_URL = "32.18.252.185:9860";

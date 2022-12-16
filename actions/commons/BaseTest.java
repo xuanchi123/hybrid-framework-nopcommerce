@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.File;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -10,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -18,6 +20,28 @@ public class BaseTest {
 	
 	protected final Log log;	
 
+	@BeforeSuite
+	public void deleteAllAllureReportFiles() {
+		System.out.println("---------- START delete file in folder ----------");
+		deleteAllFileInFolder(GlobalConstants.ALLURE_JSON);
+		System.out.println("---------- END delete file in folder ----------");
+	}
+
+	public void deleteAllFileInFolder(String pathFolder) {
+		try {
+			File file = new File(pathFolder);
+			File[] listOfFiles = file.listFiles();
+			for (int i = 0; i < listOfFiles.length; i++) {
+				if (listOfFiles[i].isFile()) {
+					System.out.println(listOfFiles[i].getName());
+					new File(listOfFiles[i].toString()).delete();
+				}
+			}
+		} catch (Exception e) {
+			System.out.print(e.getMessage());
+		}
+	}
+	
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
 	}
