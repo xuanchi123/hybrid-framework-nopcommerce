@@ -3,7 +3,7 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import com.nopcommerce.common.Common_01_Register;
+import com.nopcommerce.common.Common_01_Register_End_User;
 
 import commons.BasePage;
 import commons.BaseTest;
@@ -19,20 +19,19 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level16_Share_Data extends BaseTest{
+public class Level16_Share_Data_01_End_User extends BaseTest{
 
 	@Parameters({"browser", "browserURL"})
 	@BeforeClass
 	public void beforeClass(String browserName, String browserURL) {
 		log.info("---------Browser: " + browserName + " -------------");
 		driver = getBrowserDriver(browserName, browserURL);
- 
-		email = Common_01_Register.email;
-		password = Common_01_Register.password;
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		
+		email = Common_01_Register_End_User.email;
+		password = Common_01_Register_End_User.password;
 		
 		log.info("Login - Step 01: Click to 'Login' Link");
-		
-		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
 		
 		log.info("Login - Step 02: Input existing email to 'Email' Textbox");
@@ -43,9 +42,6 @@ public class Level16_Share_Data extends BaseTest{
 		
 		log.info("Login - Step 04: Click to 'Login' Button");
 		homePage = loginPage.clickToLogInButton();
-		
-		log.info("Login - Step 05: Verify 'Home Page' displays");		
-		Assert.assertTrue(homePage.isHomePageDisplays());
 	}
 	
 	@Test
@@ -62,6 +58,6 @@ public class Level16_Share_Data extends BaseTest{
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+//		driver.quit();
 	}
 }

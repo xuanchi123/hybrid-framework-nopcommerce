@@ -9,6 +9,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -66,7 +67,7 @@ public class BasePage {
 		driver.navigate().forward();
 	}
 
-	protected void refreshCurrentPage(WebDriver driver) {
+	public void refreshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
 	}
 
@@ -443,7 +444,7 @@ public class BasePage {
 
 	public void sleepInSecond(long second) {
 		try {
-			Thread.sleep(second);
+			Thread.sleep(second*1000);;
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -513,5 +514,15 @@ public class BasePage {
 		
 		System.out.println("Full Files Name is: " + fullFileName);
 		getWebElement(driver, HomePageUI.UPLOAD_FILE).sendKeys(fullFileName);
+	}
+
+	public Set<Cookie> getAllCookies(WebDriver driver) {
+		return driver.manage().getCookies();
+	}
+	public void setAllCookies(WebDriver driver, Set<Cookie> cookies) {
+		for (Cookie cookie : cookies) {
+			System.out.println("Current cookie is: " + cookie);
+			driver.manage().addCookie(cookie);
+		}
 	}
 }
