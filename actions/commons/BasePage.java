@@ -1,12 +1,9 @@
 package commons;
 
-import java.io.File;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -20,7 +17,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeSuite;
 
 import PageUI.jquery.file.upload.HomePageUI;
 import pageObjects.nopcommerce.admin.AdminLoginPageObject;
@@ -388,6 +384,11 @@ public class BasePage {
 				getWebElement(driver, locatorType));
 	}
 
+	public String getElementValueByJSXPath(WebDriver driver, String XpathLocator) {
+		jsExecutor = (JavascriptExecutor) driver;
+		return (String) jsExecutor.executeScript("$(document.evaluate(\"" + XpathLocator + "\", document, null, XpathResult.FIRST_ORDERED_NOTE_TYPE, null).singleNodeValue).val()");
+	}
+	
 	protected boolean isImageLoaded(WebDriver driver, String locatorType) {
 		jsExecutor = (JavascriptExecutor) driver;
 		boolean status = (boolean) jsExecutor.executeScript(

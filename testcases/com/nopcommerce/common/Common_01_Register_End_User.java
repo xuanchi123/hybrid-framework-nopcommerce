@@ -1,8 +1,6 @@
   
 package com.nopcommerce.common;
 
-import org.testng.annotations.Test;
-
 import commons.BasePage;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
@@ -12,19 +10,16 @@ import pageObjects.nopcommerce.user.UserLoginPageObject;
 import pageObjects.nopcommerce.user.UserRegisterPageObject;
 
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 
 public class Common_01_Register_End_User extends BaseTest{
 
 	@Parameters({"browser", "browserURL"})
-	@BeforeSuite (description = "Create new user for all Classes")
+	@BeforeTest (description = "Create new user for all Classes")
 	public void beforeClass(String browserName, String browserURL) {
 		log.info("---------Browser: " + browserName + " -------------");
 		driver = getBrowserDriver(browserName, browserURL);
@@ -62,7 +57,7 @@ public class Common_01_Register_End_User extends BaseTest{
 		log.info("Precondition - Register - Step 09: Verify register completed message displays");
 		Assert.assertEquals(registerPage.getRegisterCompleteMessage(), "Your registration completed");
 		
-//		driver.quit();
+		driver.quit();
 	}
 	
 	WebDriver driver;
